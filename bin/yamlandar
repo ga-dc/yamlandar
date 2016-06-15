@@ -1,2 +1,8 @@
 #!/usr/bin/env ruby
 require 'yamlandar'
+
+if ARGV[0] == "-c"
+  puts Yamlandar.generate
+else
+  Yamlandar.run!
+end

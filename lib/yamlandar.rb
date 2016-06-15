@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'yaml'
+require 'erb'
 
 class Yamlandar < Sinatra::Base
   def self.generate
@@ -47,12 +48,11 @@ class Yamlandar < Sinatra::Base
       @html += "</div><hr>"
       counter += 1
     end
-    @html
+   erb = ERB.new(File.open("#{__dir__}/views/index.erb").read)
+   erb.result binding
   end
   get '/' do
    @html = Yamlandar.generate
-   erb :index
   end
 end
 
-Yamlandar.run!
