@@ -1,4 +1,4 @@
-require 'sinatra/base'
+require 'sinatra'
 require 'yaml'
 require 'erb'
 
