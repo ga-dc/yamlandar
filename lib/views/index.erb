@@ -5,12 +5,20 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
     <style>
+      :target{
+        padding-top:100px;
+      }
       h2 a{
         color:inherit;
       }
       h1 img{
         max-width:50px;
 	margin-right:.5em;
+      }
+      .sticky{
+        background:#fff;
+	margin:0;
+	padding:1em 0;
       }
     </style>
     <script>
@@ -46,5 +54,12 @@
     <a href='#' class='js-jump'>Jump to Today</a>
   </div>
   <%= @html %>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script src='jquery.sticky.js'></script>
+  <script>
+    $(".sticky").each(function(){
+      $(this).sticky({topSpacing:0});
+    })
+  </script>
 </body>
 </html>

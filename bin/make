@@ -1,7 +1,6 @@
 #!/bin/bash
 
-gem uninstall yamlandar
 rm *.gem
 gem build yamlandar.gemspec
 gem install ./*.gem
-yamlandar -c
+yamlandar

@@ -4,14 +4,20 @@ require 'erb'
 
 class Yamlandar < Sinatra::Base
   def self.generate
+    weeknum = 1
     @html = ""
     days = YAML.load_file('schedule.yml')
     counter = 0
     start = Date.parse(days[0]["start-date"])
+    @html += "<div class='container'><h2 class='sticky '>Week #{weeknum}</h2></div>"
     days[1]["days"].each_with_index do |day, index|
       @html += "<div class='day container'>"
       is_saturday = (start + counter).wday == 6
-      counter += 2 if is_saturday
+      if is_saturday
+	counter += 2
+	weeknum += 1
+	@html += "<h2 class='sticky'>Week #{weeknum}</h2>"
+      end
       today = (start + counter).strftime("%A, %m/%d")
       yyyymmdd = Date.parse(today).strftime("%F")
       @html += "<h2 id='#{yyyymmdd}'><a href='##{yyyymmdd}'>#{today}</a></h2>"

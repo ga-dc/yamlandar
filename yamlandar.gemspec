@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A simple yaml-to-html previewer"
   s.authors     = ["Nick Olds", "Jesse Shawl"]
   s.email       = 'olds.solutions@gmail.com'
-  s.files       = ["lib/yamlandar.rb","lib/views/index.erb"]
+  s.files       = ["lib/yamlandar.rb","lib/views/index.erb","lib/public/jquery.sticky.js"]
   s.add_runtime_dependency 'sinatra', '~> 1.4'
   s.executables << 'yamlandar'
   s.homepage    =
