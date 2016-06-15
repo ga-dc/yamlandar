@@ -1,14 +1,14 @@
 Gem::Specification.new do |s|
-  s.name        = 'viewer'
-  s.version     = '1.0.1'
+  s.name        = 'yamlandar'
+  s.version     = '1.0.2'
   s.date        = '2016-06-18'
   s.summary     = "Hola!"
   s.description = "A simple yaml-to-html previewer"
   s.authors     = ["Nick Olds", "Jesse Shawl"]
   s.email       = 'olds.solutions@gmail.com'
-  s.files       = ["lib/viewer.rb"]
-  s.executables << 'viewer'
+  s.files       = ["lib/yamlandar.rb","lib/views/index.erb"]
+  s.executables << 'yamlandar'
   s.homepage    =
-    'http://rubygems.org/gems/viewer'
+    'http://rubygems.org/gems/yamlandar'
   s.license       = 'MIT'
 end
