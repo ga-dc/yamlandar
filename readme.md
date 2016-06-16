@@ -1,5 +1,7 @@
 # Yamlandar
 
+![yamlandar](./yamlandar.jpg)
+
 Generates an HTML schedule from YAML.
 
 ## CLI
