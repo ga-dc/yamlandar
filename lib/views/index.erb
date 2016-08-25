@@ -8,6 +8,9 @@
       :target{
         padding-top:100px;
       }
+      .compact :target{
+        padding-top:inherit;
+      }
       h2 a{
         color:inherit;
       }
@@ -21,12 +24,16 @@
 	padding:1em 0;
       }
       .compact .sticky, .compact .sticky-wrapper{
-        display: none;
+        width:100%;
+	clear:both;
       }
       .compact h2{
         font-size:1.2em;
 	padding-bottom:.5em;
 	border-bottom: 1px solid #ccc;
+      }
+      .compact .day h2{
+        margin-top:.5em;
       }
       .compact h3{
         font-size:1em;
@@ -36,7 +43,7 @@
 	width:20%;
 	margin-bottom:8em;
       }
-      .compact .day:nth-of-type(5n + 2){
+      .compact .day:nth-of-type(6n + 2){
         clear:both;
       }
       .compact hr{

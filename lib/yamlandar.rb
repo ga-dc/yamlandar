@@ -13,15 +13,15 @@ class Yamlandar < Sinatra::Base
     days = YAML.load_file('schedule.yml')
     counter = 0
     start = Date.parse(days[0]["start-date"])
-    @html += "<div class='container'><h2 class='sticky '>Week #{weeknum}</h2></div>"
+    @html += "<div><h2 class='sticky '>Week #{weeknum}</h2></div>"
     days[1]["days"].each_with_index do |day, index|
-      @html += "<div class='day'>"
       is_saturday = (start + counter).wday == 6
       if is_saturday
 	counter += 2
 	weeknum += 1
-	@html += "<h2 class='sticky'>Week #{weeknum}</h2>"
+	@html += "<div><h2 class='sticky'>Week #{weeknum}</h2></div>"
       end
+      @html += "<div class='day'>"
       today = (start + counter).strftime("%A, %m/%d")
       yyyymmdd = Date.parse(today).strftime("%F")
       @html += "<h2 id='#{yyyymmdd}'><a href='##{yyyymmdd}'>#{today}</a></h2>"
