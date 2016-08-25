@@ -11,7 +11,7 @@ class Yamlandar < Sinatra::Base
     start = Date.parse(days[0]["start-date"])
     @html += "<div class='container'><h2 class='sticky '>Week #{weeknum}</h2></div>"
     days[1]["days"].each_with_index do |day, index|
-      @html += "<div class='day container'>"
+      @html += "<div class='day'>"
       is_saturday = (start + counter).wday == 6
       if is_saturday
 	counter += 2

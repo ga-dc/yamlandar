@@ -3,4 +3,4 @@
 rm *.gem
 gem build yamlandar.gemspec
 gem install ./*.gem
-yamlandar
+bin/yamlandar

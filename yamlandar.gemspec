@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'yamlandar'
-  s.version     = '1.0.8'
+  s.version     = '1.0.9'
   s.date        = '2016-06-18'
   s.summary     = "Hola!"
   s.description = "A simple yaml-to-html previewer"

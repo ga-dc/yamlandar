@@ -20,6 +20,31 @@
 	margin:0;
 	padding:1em 0;
       }
+      .compact .sticky, .compact .sticky-wrapper{
+        display: none;
+      }
+      .compact h2{
+        font-size:1.2em;
+	border-bottom: 1px solid #ccc;
+      }
+      .compact h3{
+        font-size:1em;
+      }
+      .compact .day{
+        float:left;
+	width:20%;
+	margin-bottom:8em;
+      }
+      .compact .day:nth-of-type(5n + 2){
+        clear:both;
+      }
+      .compact hr{
+        display:none;
+      }
+      .compact ul{
+        padding-left:1.5em;
+	font-size:.8em;
+      }
     </style>
     <script>
       function formatDate(date) {
@@ -49,16 +74,32 @@
   <body>
   <div class='page-header'>
     <h1 class='container'><img src='https://avatars2.githubusercontent.com/u/11040407?v=3&s=200'>Schedule</h1>
+    <div class='container'>
+      <input type='checkbox' id='view'>
+      <label for='view'>Compact</label>
+    </div>
   </div>
   <div class='container'>
     <a href='#' class='js-jump'>Jump to Today</a>
   </div>
-  <%= @html %>
+  <div class='container'>
+    <%= @html %>
+  </div>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
   <script src='jquery.sticky.js'></script>
   <script>
     $(".sticky").each(function(){
       $(this).sticky({topSpacing:0});
+    })
+    var $view = $("#view")
+    var view = localStorage.getItem("yamlandar-view")
+    if(view === 'compact'){
+      document.body.classList.add('compact')
+      $view.attr('checked', 'checked')
+    }
+    $view.on("change", e => {
+      localStorage.setItem('yamlandar-view', view == "compact" ? '' : 'compact')
+      document.body.classList.toggle('compact')
     })
   </script>
 </body>
