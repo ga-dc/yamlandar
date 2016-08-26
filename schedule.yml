@@ -16,7 +16,6 @@
   - day:
     - "02:30PM - 05:00PM":
        title: "Git"
-       url: "https://github.com/ga-wdi-lessons/git-intro"
        lead: "Jesse "
        support: " Adrian"
   - day:

@@ -37,15 +37,13 @@ class Yamlandar < Sinatra::Base
           support = details["support"]
           @html += "<div class='event'>"
           @html += "<h3>"
-          if urls[0] != ""
+          if urls && urls[0] != ""
 	    @html += "<a href='#{urls[0]}'>#{title}</a>"
           else
             @html += "#{title}"
           end
           @html += "</h3><small>#{time}</small>"
-
-
-          if urls.length > 1
+          if urls && urls.length > 1
             @html += "<ul>"
             urls.each do |url|
 	      if url.class == Hash
