@@ -3,14 +3,11 @@
   - day:
     - "9:00AM - 5:00PM":
        title: "No Class"
-       lead: ""
-       support: ""
   - day:
     - "9:00AM - 12:30PM":
        title: "Intro to WDI"
        url: "https://github.com/ga-wdi-lessons/wdi-intro"
-       lead: ""
-       support: ""
+       lead: "pizza"
     - "2:30PM - 5:00PM":
        title: "CLI"
        url: "https://github.com/ga-wdi-lessons/cli-intro"

@@ -56,12 +56,10 @@ class Yamlandar < Sinatra::Base
     	end
             @html += "</ul>"
           end
-          if lead != "" || support != ""
-	    @html += "<ul>"
-	      @html += "<li>#{lead}</li>" unless lead == ""
-	      @html += "<li>#{support}</li>" unless support == ""
-	    @html += "</ul>"
-          end
+	  @html += "<ul>"
+	    @html += "<li>#{lead}</li>" if lead && lead != ""
+	    @html += "<li>#{support}</li>" if support && support != ""
+	  @html += "</ul>"
           @html += "</div>"
         end
       end
